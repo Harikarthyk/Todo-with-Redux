@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./App.css";
 import {connect} from "react-redux";
-import {addTodo} from "./actions";
+import {addTodo, deleteTodo} from "./actions";
 
 function App(props) {
 	const [text, setText] = useState("");
@@ -36,14 +36,22 @@ function App(props) {
 				<div className='form__todos'>
 					{props.todos.map((todo, index) => {
 						return (
-							<div
-								// onMouseOver={deleteOption()}
-								className='form__todo'
-								key={index + "-" + todo.id}
-							>
-								<div className='todo__text'>
-									{index + 1} ) {"  "}
-									{todo.text}
+							<div className='form__todo'>
+								<div
+									// onMouseOver={deleteOption()}
+
+									key={index + "-" + todo.id}
+								>
+									<div className='todo__text'>
+										{index + 1} ) {"  "}
+										{todo.text}
+									</div>
+								</div>
+								<div
+									onClick={() => props.dispatch(deleteTodo(todo.id))}
+									className='todo__delete'
+								>
+									Delete
 								</div>
 							</div>
 						);

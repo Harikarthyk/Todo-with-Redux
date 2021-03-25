@@ -2,10 +2,19 @@
 	margin: 0px;
 	padding: 0px;
 }
+.App {
+	min-height: 100vh;
+	background: #ffc3c3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 .App__heading {
 	font-size: 30px;
 	text-align: center;
 	margin: 20px 0px;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 form.App__form {
@@ -25,6 +34,8 @@ input.form__button {
 	border-radius: 4px;
 	border: 1px solid;
 	cursor: pointer;
+	background: #f1e4be;
+	font-weight: bold;
 }
 
 input.form__input {
@@ -44,9 +55,20 @@ input.form__input {
 	justify-content: center;
 }
 .form__todo {
-	background: #efbd74;
+	background: #ffffff;
 	margin-bottom: 5px;
-	padding: 4px;
+	display: flex;
+	justify-content: space-between;
+	padding: 8px;
 	border-radius: 2px;
-	box-shadow: 3px -1px 1px 1px #dfd2d2;
+	box-shadow: 3px -1px 1px 1px #48474712;
+}
+.todo__delete {
+	background: red;
+	padding: 3px;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
 }

@@ -17,7 +17,11 @@ const todos = (state = initialState, action) => {
 			};
 		}
 		case "DELETE_TODO": {
-			return state;
+			const newData = state.data.filter((todo) => todo.id !== action.id);
+			return {
+				...state,
+				data: newData,
+			};
 		}
 		case "EDIT_TODO": {
 			return state;
